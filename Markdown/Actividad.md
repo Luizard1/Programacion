@@ -24,7 +24,16 @@
 ## 3.3 Organización de memoria virtual
 
 1. _Investiga y explica el concepto de "paginación" y "segmentación". ¿Cuáles son las ventajas y desventajas de cada técnica?_
-    * **Paginación**:
+      * **Paginación**: es una técnica según la cual el espacio de direcciones virtuales se divide en páginas del mismo tamaño, la memoria virtual también se divide en "marcos" o "páginas del mismo tamaño físicas" del mismo tamaño, dichos marcos son compartidos por los distintos procesos que hay en el sistema de modo que cada proceso llegará a tener algunas páginas en la memoria principal (llamadas páginas activas) y otras en memoria secundaria (llamadas páginas inactivas). Este mecanismo cumple dos funciones:
+         * Llevar a cabo la transformación de una dirección virtual a física, osea, la determinación de la página a la que corresponde una determinada dirección de un programa, así como del marco, si lo hay, que ocupa esta página.
+         * Transferir, cuando haga falta, páginas de la memoria secundaria a la memoria principal, y de la memoria principal a la memoria secundaria cuando ya no sean necesarias.
+         * _VENTAJAS_:
+             * Permite que la memoria de un proceso no sea contigua, y que a un proceso se le asigne memoria física donde quiera que ésta esté disponible.
+             * Evita el gran problema de acomodar trozos de memoria de tamaño variable en el almacenamiento auxiliar.
+         * _DESVENTAJAS_:
+             * Costo de hardware y software alto debido al uso elevado de recursos de memoria y tiempo de CPU para la implantación de la nueva información manejada además de el mecanismo de traducción de direcciones que sea necesario.
+
+  * __Segmentación__: es un esquema de administración de memoria que apoya la perspectiva que el usuario tiene de la memoria. Un espacio de direcciones lógicas se compone de un conjunto de segmentos, cada uno de los cuales tiene un nombre y una longitud. Las direcciones especifican el nombre del segmento y el desplazamiento dentro de él, de manera que el usuario especifica cada dirección con dos cantidades: el nombre del segmento y un desplazamiento.
 2. _Escribe un programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual_.
 
 ## 3.4 Administración de memoria virtual
