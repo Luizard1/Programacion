@@ -84,14 +84,72 @@ Utilizaría principalmente respaldos en la nube, para tener mi información segu
 # __PROTECCIÓN Y SEGURIDAD__
 
 # EJERCICIO 1: Concepto y objetivos de protección y seguridad
+
+
 ## Define los conceptos de protección y seguridad en el contexto de sistemas operativos.
+* Protección: Es un mecanismo de control de acceso de los programas, proceso o usuarios al sistema o recursos del mismo. Su objetivo principal es el de controlar que cada componente activo de un proceso solo pueda acceder a los recursos especificados, y solo en forma congruente con la política establecida.
+* Seguridad: se enfoca en la protección de la infraestructura del sistema y todo lo relacionado con esta. Su objetivo principal es el de asegurar la confidencialidad e integridad de la información del sistema.
+
 ## Identifica los objetivos principales de un sistema de protección y seguridad, como confidencialidad, integridad y disponibilidad.
+* Confidencialidad. Se refiere a que la información y los recursos solo sean accesibles a los usuarios autorizados.
+* Integridad. Su objetivo es el de asegurar que los datos y procesos no sean alterados de manera no autorizada.
+* Disponibilidad. Trata de garantizar que los servicios, aplicaciones y datos estén disponibles para los usuarios autorizados cuando los necesiten.
+* Autenticación. Asegura que solo los usuarios legítimos puedan acceder al sistema o a ciertos recursos.
+* Autorización. Asegura que, una vez autenticado, el usuario tenga acceso solo a los recursos a los que está autorizado, de a cuerdo a sus permisos específicos.
+* No repudio. Garantiza que los usuarios no pueden negar sus acciones dentro del sistema, especialmente en transacciones importantes.
+* Auditoría y monitoreo. Su objetivo es registrar y monitorear las actividades del sistema para detectar y prevenir incidentes de seguridad.
+* Aislamiento. Protege los procesos y recursos del sistema impidiendo que un proceso malicioso o comprometido afecte a otros procesos o a los datos del sistema.
+* Resiliencia ante fallos. Asegura que el sistema pueda recuperarse rápidamente después de un fallo o ataque, manteniendo la continua disponibilidad de los servicios.
+
 ## Da un ejemplo práctico de cómo se aplican estos objetivos en un sistema operativo.
+* Confidencialidad. Ejemplo en windows: el uso de BitLocker para cifrar una unidad completa y proteger los datos almacenados en un disco.
+~~~
+Enable-BitLocker -MountPoint "C:" -PasswordProtector
+~~~
+
+* Integridad. Verificar la integridad de archivos del sistema con scannow:
+~~~
+sfc /scannow
+~~~
+
+* Disponibilidad. En windows, hacer una copia de seguridad automática usando Windows Backup:
+~~~
+wbadmin start backup -backuptarget:E: -include:C: -quiet
+~~~
+
+* Autenticación. Habilitar Windows Hello o MFA (requiere una cuenta de Microsoft para la autenticación multifactor):
+Configuración en Configuración -> Cuentas -> Opciones de inicio de sesión.
+
+* Autorización. Configurar permisos en un archivo o carpeta:
+
+Clic derecho -> Propiedades -> Seguridad -> Editar para ajustar permisos específicos de usuarios.
+
+* No repudio. Revisar el registro de eventos en Visor de eventos -> Registros de Windows -> Seguridad.
+
+* Auditoría y monitoreo. Usar Visor de eventos para revisar los registros de seguridad y actividad:
+Clic derecho -> Examinar eventos -> Visor de eventos -> Registros de Windows -> Seguridad.
+
 
 # EJERCICIO 2: Clasificación aplicada a la seguridad.
+
 ## Investiga las clasificaciones comunes de la seguridad, como física, lógica y de red.
+* Física: abarca desde la ubicación física en el mundo del sistema, donde se pondrán los equipos y lo que conlleva instalar un sistema de cómputo. Se deben de considerar características como el valor y la importancia de los equipos, así ocmo las instalaciones, servicios, seguridad del lugar, filtros vibraciones, ductos, etcétera, así como también se deben de considerar todos los aspectos del personal y visitantes, vidrio reforzado, accesos de terceras personas, registros de entrada y salida de personas, la seguridad de las puertas, etcétera.
+
+* Seguridad lógica: consiste en la aplicación de "barreras" y procedimientos que resguarden el acceso a los datos y que sólo se permita acceder a ellos a las personas autorizadas para hacerlo. Un dicho que puede explicar el proposito de la seguridad lógica es aquél que dice "todo lo que no está permitido debe estar prohibido".
+
+* Seguridad de red: tiene tres objetivos principales, los cuales son: evitar el acceso no autorizado a los recursos de red, detectar y detener los ataques cibernéticos y las violaciones de seguridad en curso, y garantizar que los usuarios no autorizados tengan acceso a los recursos de red que necesitan, cuando los necesiten.
+
 ## Explica el papel de cada clasificación en la protección de un sistema operativo.
+* Protección física. Su rol es el de proteger primeramente la infraestructura del sistema, evitando que cualquier anomalía sea provocada en todo lo que concierne al hardware.
+* Protección lógica. Resguarda el acceso a los datos, previene que información sensible o de carácter "clasificado" pueda ser accesible para cualquiera.
+* Protección de red. Evita que terceros puedan acceder a la información del sistema mediante la red por distintos métodos, en esencia es lo que asegura que podamos utilizar la red sin comprometer los datos.
+
 ## Proporciona ejemplos prácticos de herramientas o técnicas utilizadas en cada clasificación
+* Protección física: control de acceso a instalaciones (tarjetas, llaves, lectores biométricos), cajas fuertes, monitoreo de cámaras de video, bloqueos de puertos USB.
+
+* Protección lógica: Autenticación multifactor, cifrado de datos (BitLocker, VeraCrypt), WAF (cloudflare).
+
+* Protección de red: firewalls de red (cisco ASA), VPN (Cisco AnyConnect), protección DDos (AWS Shield)
 
 # EJERCICIO 3: Funciones del sistema de protección.
 
