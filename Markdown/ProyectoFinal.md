@@ -154,18 +154,30 @@ Clic derecho -> Examinar eventos -> Visor de eventos -> Registros de Windows -> 
 # EJERCICIO 3: Funciones del sistema de protección.
 
 ## Describe cómo un sistema de protección controla el acceso a los recursos.
+Un sistema de protección utiliza mecanismos diseñados para garantizar que solo los usuarios y procesos autorizados puedan acceder, mecanismos tales como la autenticación, autorización, control de acceso a nivel de sistema, monitoreo y auditoria.
+
 ## Explica las funciones principales como autenticación, autorización y auditoría.
+* Autenticación. Es el proceso de verificar la identidad del usuario o proceso que solicita acceso a un recurso del sistema.
+* Autorización. Una vez que un usuario o proceso se ha autenticado, el sistema necesita asegurarse de que tiene permiso para acceder a los recursos solicitados.
+* Control de acceso a nivel de sistema. Consta de políticas de control de acceso que se aplican a los recursos del sistema como la memoria, el CPU o dispositivos periféricos. Esto implica que el sistema operativo monitoriza y controla el uso de recursos compartidos y asegura que cada proceso acceda solo a los recursos que le son asignados.
+* Monitoreo y auditoría. Se implementan para rastrear el acceso a recursos y detectar posibles intentos de acceso no autorizado a recursos o actividad sospechosa. Esto implica registrar eventos, como intentos de acceso a archivos, cambios en permisos o modificaciones no autorizadas.
+
 ## Diseña un caso práctico donde se muestren las funciones de un sistema de protección en acción.
 
 # EJERCICIO 4: Implantación de matrices de acceso.
+
 ## Diseña una matriz de acceso para un sistema con al menos 3 usuarios y 4 recursos.
+
 ## Explica cómo esta matriz se utiliza para controlar el acceso en un sistema operativo.
+
 ## Simula un escenario donde un usuario intenta acceder a un recurso no permitido y cómo la matriz lo bloquea.
 
 # EJERCICIO 5:  Protección basada en el lenguaje.
 
 ## Explica el concepto de protección basada en el lenguaje.
+
 ## Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura la memoria y evita accesos no autorizados.
+
 ## Compara este enfoque con otros mecanismos de protección en sistemas operativos.
 
 # EJERCICIO 6: Validación y amenazas al sistema.
