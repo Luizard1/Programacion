@@ -61,45 +61,60 @@
       <a href="Pruebas/Prueba.html">
         <button>VER MAS</button>
       </a>
+    </div>
+
+    <section class="carrusel">
+      <h2>EXPLORAR ZAPATOS DE LUJO</h2>
+      <div class="carrusel-wrapper">
+        <button class="nav left">&#10094;</button>
+        <div class="item-carrusel">
+          <img src="/Web/Draco/Draco/Imagenes/zapatolujo.avif" alt="Zapato 1" width="80%">
+          <p>Modelo 1</p>
         </div>
+        <div class="item-carrusel">
+          <img src="/Web/Draco/Draco/Imagenes/zapatolujo2.jpg" alt="Zapato 2" width="80%">
+          <p>Modelo 2</p>
+        </div>
+        <div class="item-carrusel">
+          <img src="/Web/Draco/Draco/Imagenes/zapatolujo3.avif" alt="Zapato 3" width="80%">
+          <p>Modelo 3</p>
+        </div>
+        <div class="item-carrusel">
+          <img src="/Web/Draco/Draco/Imagenes/zapatolujo4.avif" alt="Zapato 4" width="80%">
+          <p>Modelo 4</p>
+        </div>
+        </div>
+        <button class="nav right">&#10095;</button>
+      </div>
+    </section>
 
-<section class="content-below-video">
-   <h2>Explora nuestros mejores modelos</h2>
-</section>
+    <script>
+      const track = document.querySelector('.carrusel-track');
+      const slides = document.querySelectorAll('.carrusel-slide');
+      const prev = document.querySelector('.nav.left');
+      const next = document.querySelector('.nav.right');
+      let index = 0;
 
-           <section class="contenido">
+      function updateCarousel() {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        const offset = slides[index].offsetLeft - track.offsetWidth / 2 + slides[index].offsetWidth / 2;
+        track.scrollTo({ left: offset, behavior: 'smooth' });
+      }
 
-             <!-- Item Zapatos Classic -->
-             <div class="item">
-               <img src="Imagenes/Zapatos2-removebg-preview.png" alt="Imagen 1">
-               <p class="descripcion">Classic</p>
-               <!-- El botón que al hacer click llama a la funcion "reproducir()" -->
-               <button onclick="reproducir('CancionTelecaster')">Ver</button>
-             </div>
+      prev.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
 
-             <!-- Item Zapatos ¨Mosley" -->
-             <div class="item">
-               <img src="Imagenes/Zapatos3-removebg-preview.png" alt="Imagen 1">
-               <p class="descripcion">Mosley</p>
-               <!-- El botón que al hacer click llama a la funcion "reproducir()" -->
-               <button onclick="reproducir('CancionTelecaster')">Ver</button>
-             </div>
+      next.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+      });
 
-             <!-- Item Zapatos ¨Prince" -->
-             <div class="item">
-               <img src="Imagenes/Zapatos4-removebg-preview.png" alt="Imagen 1">
-               <p class="descripcion">Prince</p>
-               <!-- El botón que al hacer click llama a la funcion "reproducir()" -->
-               <button onclick="reproducir('CancionTelecaster')">Ver</button>
-             </div>
-
-             <!-- Item Zapatos ¨Lagoon" -->
-             <div class="item">
-               <img src="Imagenes/Zapatos6-removebg-preview.png" alt="Imagen 1">
-               <p class="descripcion">Lagoon</p>
-               <!-- El botón que al hacer click llama a la funcion "reproducir()" -->
-               <button onclick="reproducir('CancionTelecaster')">Ver</button>
-             </div>
-
+      updateCarousel();
+    </script>
 </body>
 </html>

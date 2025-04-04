@@ -8,19 +8,43 @@ body {
 
 /* Barra de navegación */
 
+/* Estilos para el header */
 header {
-  display: flex;           /* Coloca las tres secciones en línea */
-  align-items: center;     /* Alinea verticalmente al centro */
-  justify-content: space-between; /* Separa left y right con el center en medio */
-  padding: 10px 20px;
-  background-color: #fff;  /* Ajusta color de fondo */
-}
-.header-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-}
+    display: flex;           /* Coloca las tres secciones en línea */
+    align-items: center;     /* Alinea verticalmente al centro */
+    justify-content: space-between; /* Separa left y right con el center en medio */
+    padding: 10px 20px;
+    background-color: #fff;  /* Ajusta color de fondo */
+  }
+  .header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+  }
+
+  /* Estilos para listas sin viñetas y en línea */
+  ul {
+    list-style: none;        /* Opciones: disc, circle, square, none, etc. */
+    display: flex;           /* Opciones: block, inline-flex, grid, etc. */
+    gap: 10px;               /* Espaciado entre elementos: unidades posibles px, em, rem, %, etc. */
+  }
+
+  /* Estilos para botones */
+  button {
+    display: flex;
+    background-color: transparent; /* Fondo transparente; también se puede usar un color (hex, rgb, rgba) */
+    border: none;            /* Sin borde; si se desea, se pueden definir: border: 1px solid #000; */
+    font: inherit;           /* Hereda la fuente del elemento padre. Alternativamente se puede especificar font-size, font-weight, etc. */
+    cursor: pointer;         /* Cambia el cursor al pasar el mouse: opciones: pointer, default, wait, etc. */
+    padding: 10px;           /* Espaciado interno; opciones: px, em, rem, etc. */
+    transition: background-color 0.3s; /* Transición para cambios en el background; puedes modificar la propiedad, duración y easing */
+  }
+
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo al pasar el ratón; acepta rgba, hex, etc. */
+  }
+
 
 
 

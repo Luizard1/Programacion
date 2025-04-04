@@ -266,3 +266,72 @@
     margin-top: 10px;
     font-size:3vw
   }
+
+  .carrusel {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .carrusel h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .carrusel-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carrusel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 50px;
+  }
+  .carrusel-slide {
+    min-width: 300px;
+    opacity: 0.4;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.9);
+  }
+  .carrusel-slide.active {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  .carrusel-slide img {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+  }
+  .carrusel-slide p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: white;
+  }
+  .nav {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s;
+  }
+  .nav:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .nav.left {
+    left: 0;
+  }
+  .nav.right {
+    right: 0;
+  }
+  
