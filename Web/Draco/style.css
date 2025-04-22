@@ -54,7 +54,7 @@
     }
 
     .landing-images button {
-      background-image: url('Logos/logo_draco.PNG');
+      background-image: url('Media/Logo/logo_draco.PNG');
       width: 55px;
       height: 55px;
       background-size: cover;
@@ -265,4 +265,210 @@
     font-family: Century;
     margin-top: 10px;
     font-size:3vw
+  }
+
+  .dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .dropdown-overlay.show .dropdown-menu {
+    transform: translateX(0);
+  }
+  .dropdown-overlay.show {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    padding: 12px 0;
+    color: black;
+    text-decoration: none;
+    font-family: 'Century';
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    color: #C28840;
+  }
+  
+  .dropdown-menu.show {
+    display: flex;
+  }
+  
+  .close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1001;
+  }
+  
+  .close-menu-btn:hover {
+    background-color: #333;
+  }
+  
+  /* --- Buscar: estilo inicial (botón) --- */
+  .search-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* --- Formulario expandido (oculto por defecto) --- */
+  .search-form {
+    display: none;
+    align-items: center;
+    border-bottom: 2px solid black;
+    width: 220px;
+    padding: 2px 0;
+    background-color: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .search-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 4px;
+    margin-left: 6px;
+  }
+
+  .search-form .close-search {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: black;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+
+  .search-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Clase activa para mostrar el formulario */
+  .search-active .search-trigger {
+    display: none;
+  }
+
+  .search-active .search-form {
+    display: flex;
+  }
+
+  .contact-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+  }
+  
+  .contact-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35vw; /* Ajustado para que ocupe 35% del ancho de pantalla */
+    max-width: 480px;
+    height: 100%;
+    background-color: white;
+    padding: 60px 50px;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    overflow-y: auto;
+  }
+  
+  .contact-overlay.show {
+    display: block;
+  }
+  
+  .contact-overlay.show .contact-panel {
+    transform: translateX(0);
+  }
+  
+  .close-contact {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-panel h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-family: 'Century', sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .contact-panel p {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+  }
+  
+  .contact-panel a {
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: black;
   }

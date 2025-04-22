@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRACO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <ul>
+                <button id="menuButton" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round"/>
+                        <line x1="4" y1="10" x2="20" y2="10" stroke-linecap="round"/>
+                        <line x1="4" y1="14" x2="20" y2="14" stroke-linecap="round"/>
+                        <line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round"/>
+                    </svg>
+                    Menú
+                </button>
+
+                <div class="dropdown-overlay" id="dropdownOverlay">
+                  <div class="dropdown-menu slide-in" id="dropdownMenu">
+                    <button id="closeMenu" class="close-menu-btn">✕</button>
+                    <a href="#">Inicio</a>
+                    <a href="#">Catálogo</a>
+                    <a href="#">Hombre</a>
+                    <a href="#">Mujer</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">+52 800 000 0000</a>
+                  </div>
+                </div>               
+
+                <li id="searchWrapper">
+                  <!-- Estado inicial: botón Buscar -->
+                  <button id="searchTrigger" class="search-trigger">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                      <circle cx="10" cy="10" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+                      <line x1="14.5" y1="14.5" x2="20" y2="20" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Buscar
+                  </button>
+                
+                  <!-- Barra de búsqueda expandida -->
+                  <form id="searchForm" class="search-form" action="busqueda.html" method="get">
+                    <span class="search-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <circle cx="10" cy="10" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="14.5" y1="14.5" x2="20" y2="20" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <input type="text" name="q" placeholder="Buscar en el sitio..." required />
+                    <button type="button" id="searchClose" class="close-search">✕</button>
+                  </form>
+                </li>
+            </ul>
+        </div>
+
+        <div class="header-center">
+            <a href='index.html'>
+                <img src="Media/Logo/logo_draco.png" alt="" width="30%" style="filter: invert(100%)">
+            </a>
+        </div>
+
+        <div>
+            <ul>
+                <button id="contactButton">Contactar</button>
+                <div class="contact-overlay" id="contactOverlay">
+                  <div class="contact-panel">
+                    <button class="close-contact" id="closeContact">✕</button>
+                    <h2>COMUNÍQUESE CON NOSOTROS</h2>
+                
+                    <p>
+                      <a href="tel:+528004610560">📞 LLÁMENOS +52 800 461 0560</a><br>
+                      <small>De lunes a sábado de 8:00 a 22:00 (hora del este).<br>
+                      Domingo de 9:00 a 20:00 (hora del este).</small>
+                    </p>
+                
+                    <p>
+                      <span style="color: gold;">●</span>
+                      <a href="#">CHAT EN VIVO</a><br>
+                      <small>De lunes a sábado de 9:00 a 23:00 (hora del este).<br>
+                      Domingo de 10:00 a 21:00 (hora del este).</small>
+                    </p>
+                
+                    <p>¿Necesita más ayuda?<br>
+                    <a href="#">Póngase en contacto con nuestro equipo</a></p>
+                  </div>
+                </div>                
+
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <path d="M6 8L4 20H20L18 8H6Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </ul>
+        </div>
+    </header>
+
+    <div class="video-container">
+        <video src="Media/video_draco2.mp4" type="video/mp4" autoplay loop></video>
+    </div>
+
+    <div class="overlay">
+        <h1>DRACO</h1>
+        <h3>ZAPATOS DE ALTA GAMA</h3>
+        <a href="catalogo.html">
+            <button>VER MÁS</button>
+        </a>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="search.js"></script>
+    <script src="contacto.js"></script>
+</body>
+</html>
