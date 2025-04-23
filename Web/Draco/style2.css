@@ -1,0 +1,165 @@
+/* Reset básico: elimina márgenes y paddings, y establece box-sizing */
+
+
+/* Estilos base para el body */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Puedes cambiar por otras familias: 'serif', 'monospace', etc. */
+    font-size: 14px;         /* Tamaño base de fuente. Otras unidades: rem, em, %, etc. */
+    line-height: 1.5;        /* Altura de línea; puede ser un número (relativo) o una unidad (px, rem) */
+    color: #333;             /* Color del texto, acepta hex, rgb, rgba, hsl, etc. */
+    background-color: #fff;  /* Color de fondo, opciones: hex, rgb, rgba, hsl, etc. */
+    align-items: center;
+  }
+  
+  /* Estilos para el header */
+  header {
+    display: flex;           /* Coloca las tres secciones en línea */
+    align-items: center;     /* Alinea verticalmente al centro */
+    justify-content: space-between; /* Separa left y right con el center en medio */
+    padding: 10px 20px;
+    background-color: #fff;  /* Ajusta color de fondo */
+  }
+  .header-center {
+    width: 30%;        /* o la medida que necesites */
+    max-width: 300px;  /* límite superior */
+    min-width: 150px;  /* límite inferior para que no se haga muy pequeño */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+  }
+  
+  /* Estilos para listas sin viñetas y en línea */
+  ul {
+    list-style: none;        /* Opciones: disc, circle, square, none, etc. */
+    display: flex;           /* Opciones: block, inline-flex, grid, etc. */
+    gap: 10px;               /* Espaciado entre elementos: unidades posibles px, em, rem, %, etc. */
+  }
+  
+  /* Estilos para botones */
+  button {
+    display: flex;
+    background-color: transparent; /* Fondo transparente; también se puede usar un color (hex, rgb, rgba) */
+    border: none;            /* Sin borde; si se desea, se pueden definir: border: 1px solid #000; */
+    font: inherit;           /* Hereda la fuente del elemento padre. Alternativamente se puede especificar font-size, font-weight, etc. */
+    cursor: pointer;         /* Cambia el cursor al pasar el mouse: opciones: pointer, default, wait, etc. */
+    padding: 10px;           /* Espaciado interno; opciones: px, em, rem, etc. */
+    transition: background-color 0.3s; /* Transición para cambios en el background; puedes modificar la propiedad, duración y easing */
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo al pasar el ratón; acepta rgba, hex, etc. */
+  }
+  
+  /* Estilos para imágenes */
+  
+  /* Estilos para SVG (por defecto se muestran como bloque) */
+  svg {
+    display: block;          /* Opciones: block, inline, inline-block, etc. */
+  }
+  
+  /* Estilos para enlaces */
+  a {
+    text-decoration: none;   /* Elimina subrayado; opciones: none, underline, overline, line-through, etc. */
+    color: inherit;          /* Hace que el enlace herede el color del elemento padre; también se puede especificar un color fijo */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ajusta el contenido al centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Fondo con transparencia para resaltar el contenido */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Asegura que el overlay se sitúe encima del video */
+    pointer-events: none; /* Permite que los clics pasen al video si fuera necesario */
+  }
+  
+  /* Permite interacción en los elementos hijos del overlay */
+  .overlay * {
+    pointer-events: auto;
+  }
+  
+  /* Habilita la interactividad en los elementos hijos del overlay */
+  .overlay h1 {
+    color: #fff;
+    font-size: 5vw;   /* Tamaño dinámico en función del ancho de la ventana */
+    font-weight: 100;
+    margin: 0 0 250px 0; /* Separación inferior */
+    letter-spacing: 0.2em; /* Espaciado entre letras */
+  }
+  
+  .overlay h6 {
+    align-self: flex-start;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin: 0 0 50px 40px; /* Separación inferior */
+  }
+  
+  /* Estilos para el botón */
+  .overlay button {
+    padding: 16px 24px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    font-size: 10px;
+    cursor: pointer;
+    margin: 0 0 0 130px;
+    transition: transform 0.3s;
+    align-self: flex-start;  /* Alinea el botón a la izquierda */
+  }
+  .overlay button:hover {
+    transform: scale(120%);
+  }
+  .video-container {
+    aspect-ratio: 21 / 9;
+    position: relative; /* Contenedor relativo para posicionar el overlay */
+    width: 100%;
+    height: 80vh;
+    background-color: black;
+  }
+  
+  .video-container > video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+
+  
+  footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #ccc;
+  }

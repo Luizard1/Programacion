@@ -129,69 +129,73 @@
   }
 
   .video-container > video {
+    object-fit: cover;
     width: 100%;
-    height: 81.3%;
-    display: block;           /* Opciones: block, inline-block, etc. */
-    object-fit: cover;        /* Ajusta el contenido del video al contenedor */
+    height: 100%;
+    display: block;
   }
 
   .video-container {
+    aspect-ratio: 21 / 9;
     position: relative; /* Contenedor relativo para posicionar el overlay */
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 80vh;
+    background-color: black;
   }
 
 
 
   .overlay {
     position: absolute;
-    margin-top: 115px;
     top: 0;
     left: 0;
     width: 100%;
-    height: 81.3%;
+    height: 100%;
     /* Ajusta el contenido al centro */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     /* Fondo con transparencia para resaltar el contenido */
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
     /* Asegura que el overlay se sitúe encima del video */
-    z-index: 1;
+    pointer-events: none; /* Permite que los clics pasen al video si fuera necesario */
   }
+
+  .overlay * {
+    pointer-events: auto;
+  }
+
   /* Habilita la interactividad en los elementos hijos del overlay */
   .overlay h1 {
     color: #fff;
-    font-size: 10vw;   /* Tamaño dinámico en función del ancho de la ventana */
-      font-weight: normal;
-      font-family: Colonna MT;
-      margin: 0 0 20px 0; /* Separación inferior */
-      letter-spacing: 0.1em; /* Espaciado entre letras */
+    font-size: 5vw;   /* Tamaño dinámico en función del ancho de la ventana */
+    font-weight: 100;
+    margin: 0 0 250px 0; /* Separación inferior */
+    letter-spacing: 0.2em; /* Espaciado entre letras */
   }
 
   .overlay h3 {
+    align-self: flex-start;
     color: #fff;
-      font-size: 2rem;
-      font-family: Century;
-      margin: 0 0 10px 0; /* Separación inferior */
+    font-size: 1.9rem;
+    font-weight: lighter;
+    margin: 0 0 50px 40px; /* Separación inferior */
   }
 
   /* Estilos para el botón */
   .overlay button {
     padding: 16px 24px;
-    border: 2px solid #000000;
-    border-radius: 3px;
-    background-color: #ffffff;
+    border: 1px solid #fff;
+    background-color: transparent;
     backdrop-filter: blur(5px);
-    font-family: Century;
-    color: #C28840;
-    font-size: 12px;
+    color: #ffffff;
+    font-size: 20px;
     cursor: pointer;
+    margin: 0 0 0 130px;
     transition: transform 0.3s;
-
+    align-self: flex-start;  /* Alinea el botón a la izquierda */
   }
+
   .overlay button:hover {
     transform: scale(120%);
   }
@@ -471,4 +475,99 @@
     font-weight: 400;
     text-decoration: underline;
     color: black;
+  }
+
+  .promo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 5%;
+    gap: 40px;
+    background-color: #fefaf5;
+  }
+  
+  .promo-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .promo-image {
+    flex: 1;
+  }
+  
+  .promo-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .promo-text h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: 'Century', serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+  .promo-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
+  }
+  
+  .promo-text button {
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .promo-text button:hover {
+    background-color: #333;
+  }
+  
+
+
+
+
+
+
+  footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #ccc;
   }
