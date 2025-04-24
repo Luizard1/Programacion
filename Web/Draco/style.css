@@ -1,8 +1,7 @@
-/* Reset básico: elimina márgenes y paddings, y establece box-sizing */
 * {
-    margin: 0;               /* Quita el margen por defecto (puedes usar px, %, etc. si lo necesitas) */
-    padding: 0;              /* Quita el padding por defecto */
-    box-sizing: border-box;  /* Opciones: border-box, content-box (border-box incluye padding y borde en el ancho total) */
+    margin: 0;               
+    padding: 0;              
+    box-sizing: border-box;  
   }
 
   .landing-section {
@@ -46,46 +45,91 @@
   }
 
 
-    .landing-images {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        position: relative;
-    }
+  .landing-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+  }
 
-    .landing-images button {
-      background-image: url('Media/Logo/logo_draco.PNG');
-      width: 55px;
-      height: 55px;
-      background-size: cover;
-      position: absolute;
-      bottom: 50%;
-      z-index: 2;
-    }
+  .landing-images button {
+    background-image: url('Media/Logo/logo_draco.PNG');
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    position: absolute;
+    bottom: 50%;
+    z-index: 2;
+  }
 
-    .landing-images button:hover{
-      background-color: #333
-    }
+  .landing-images button:hover{
+    background-color: #333
+  }
 
-  /* Estilos base para el body */
   body {
-    font-family: Arial, Helvetica, sans-serif; /* Puedes cambiar por otras familias: 'serif', 'monospace', etc. */
-    font-size: 16px;         /* Tamaño base de fuente. Otras unidades: rem, em, %, etc. */
-    line-height: 1.5;        /* Altura de línea; puede ser un número (relativo) o una unidad (px, rem) */
-    color: #333;             /* Color del texto, acepta hex, rgb, rgba, hsl, etc. */
-    background-color: #fff;  /* Color de fondo, opciones: hex, rgb, rgba, hsl, etc. */
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 16px;         
+    line-height: 1.5;        
+    color: #333;             
+    background-color: #fff;  
+  }
+
+  body.hero-scrolled .hero-logo {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+  }
+  
+  body.hero-scrolled header {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  body:not(.hero-scrolled) header {
+    opacity: 0;
+    transform: translateY(-100%);
+    position: absolute;
+  }
+
+  .hero-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent; 
+    z-index: 1500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+  }
+  
+  
+  .hero-logo img {
+    width: 30vw;
+    max-width: 600px;
+    transition: transform 0.5s ease;
   }
 
 
-
-  /* Estilos para el header */
+  
   header {
-    display: flex;           /* Coloca las tres secciones en línea */
-    align-items: center;     /* Alinea verticalmente al centro */
-    justify-content: space-between; /* Separa left y right con el center en medio */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
     padding: 10px 20px;
-    background-color: #fff;  /* Ajusta color de fondo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translateY(0);     
+    opacity: 1;                   
   }
+  
+
   .header-center {
     display: flex;
     justify-content: center;
@@ -93,39 +137,39 @@
     text-align:center;
   }
 
-  /* Estilos para listas sin viñetas y en línea */
+  
   ul {
-    list-style: none;        /* Opciones: disc, circle, square, none, etc. */
-    display: flex;           /* Opciones: block, inline-flex, grid, etc. */
-    gap: 10px;               /* Espaciado entre elementos: unidades posibles px, em, rem, %, etc. */
+    list-style: none;        
+    display: flex;           
+    gap: 10px;               
   }
 
-  /* Estilos para botones */
+  
   button {
     display: flex;
-    background-color: transparent; /* Fondo transparente; también se puede usar un color (hex, rgb, rgba) */
-    border: none;            /* Sin borde; si se desea, se pueden definir: border: 1px solid #000; */
-    font: inherit;           /* Hereda la fuente del elemento padre. Alternativamente se puede especificar font-size, font-weight, etc. */
-    cursor: pointer;         /* Cambia el cursor al pasar el mouse: opciones: pointer, default, wait, etc. */
-    padding: 10px;           /* Espaciado interno; opciones: px, em, rem, etc. */
-    transition: background-color 0.3s; /* Transición para cambios en el background; puedes modificar la propiedad, duración y easing */
+    background-color: transparent; 
+    border: none;            
+    font: inherit;          
+    cursor: pointer;        
+    padding: 10px;          
+    transition: background-color 0.3s;
   }
 
   button:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo al pasar el ratón; acepta rgba, hex, etc. */
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
-  /* Estilos para imágenes */
+ 
 
-  /* Estilos para SVG (por defecto se muestran como bloque) */
+ 
   svg {
-    display: block;          /* Opciones: block, inline, inline-block, etc. */
+    display: block;         
   }
 
-  /* Estilos para enlaces */
+ 
   a {
-    text-decoration: none;   /* Elimina subrayado; opciones: none, underline, overline, line-through, etc. */
-    color: inherit;          /* Hace que el enlace herede el color del elemento padre; también se puede especificar un color fijo */
+    text-decoration: none;  
+    color: inherit;         
   }
 
   .video-container > video {
@@ -137,7 +181,7 @@
 
   .video-container {
     aspect-ratio: 21 / 9;
-    position: relative; /* Contenedor relativo para posicionar el overlay */
+    position: relative;
     width: 100%;
     height: 80vh;
     background-color: black;
@@ -151,27 +195,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Ajusta el contenido al centro */
+   
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Fondo con transparencia para resaltar el contenido */
+   
     background-color: rgba(0, 0, 0, 0.3);
-    /* Asegura que el overlay se sitúe encima del video */
-    pointer-events: none; /* Permite que los clics pasen al video si fuera necesario */
+   
+    pointer-events: none;
   }
 
   .overlay * {
     pointer-events: auto;
   }
 
-  /* Habilita la interactividad en los elementos hijos del overlay */
+ 
   .overlay h1 {
     color: #fff;
-    font-size: 5vw;   /* Tamaño dinámico en función del ancho de la ventana */
+    font-size: 5vw;  
     font-weight: 100;
-    margin: 0 0 250px 0; /* Separación inferior */
-    letter-spacing: 0.2em; /* Espaciado entre letras */
+    margin: 0 0 250px 0;
+    letter-spacing: 0.2em;
   }
 
   .overlay h3 {
@@ -179,10 +223,10 @@
     color: #fff;
     font-size: 1.9rem;
     font-weight: lighter;
-    margin: 0 0 50px 40px; /* Separación inferior */
+    margin: 0 0 50px 40px;
   }
 
-  /* Estilos para el botón */
+ 
   .overlay button {
     padding: 16px 24px;
     border: 1px solid #fff;
@@ -193,7 +237,7 @@
     cursor: pointer;
     margin: 0 0 0 130px;
     transition: transform 0.3s;
-    align-self: flex-start;  /* Alinea el botón a la izquierda */
+    align-self: flex-start; 
   }
 
   .overlay button:hover {
@@ -288,7 +332,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 300px;
+    width: 800px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -346,7 +390,7 @@
     background-color: #333;
   }
   
-  /* --- Buscar: estilo inicial (botón) --- */
+ 
   .search-trigger {
     display: flex;
     align-items: center;
@@ -358,7 +402,7 @@
     cursor: pointer;
   }
 
-  /* --- Formulario expandido (oculto por defecto) --- */
+ 
   .search-form {
     display: none;
     align-items: center;
@@ -393,7 +437,7 @@
     align-items: center;
   }
 
-  /* Clase activa para mostrar el formulario */
+ 
   .search-active .search-trigger {
     display: none;
   }
@@ -418,8 +462,8 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 35vw; /* Ajustado para que ocupe 35% del ancho de pantalla */
-    max-width: 480px;
+    width: 35vw;
+    max-width: 800px;
     height: 100%;
     background-color: white;
     padding: 60px 50px;
@@ -456,7 +500,7 @@
   }
   
   .contact-panel h2 {
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     font-weight: 400;
     margin-bottom: 30px;
     font-family: 'Century', sans-serif;
@@ -464,14 +508,14 @@
   }
   
   .contact-panel p {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 25px;
     line-height: 1.6;
     font-family: Arial, sans-serif;
   }
   
   .contact-panel a {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     text-decoration: underline;
     color: black;
@@ -481,93 +525,217 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 5%;
-    gap: 40px;
+    padding: 80px 5%;
+    gap: 60px;
     background-color: #fefaf5;
+    min-height: 90vh;
   }
   
   .promo-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    display: block;
     object-fit: cover;
-    border-radius: 4px;
   }
   
+  
   .promo-image {
-    flex: 1;
+    flex: 1.5;
   }
   
   .promo-text {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     font-family: 'Arial', sans-serif;
   }
   
   .promo-text h1 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
     font-family: 'Century', serif;
-    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
     text-transform: uppercase;
   }
   
   .promo-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 500px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 600px;
   }
   
   .promo-text button {
-    padding: 12px 24px;
+    font-size: 1rem;
+    padding: 14px 36px;
     background-color: black;
     color: white;
-    font-size: 0.95rem;
+    text-transform: uppercase;
     border: none;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     transition: background-color 0.3s ease;
   }
   
   .promo-text button:hover {
     background-color: #333;
   }
-  
 
-
-
-
-
-
-  footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+  .catalog-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    min-height: 90vh;
+    background-color: #fefaf5;
   }
   
-  footer ul {
+  .catalog-item {
+    width: 500px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+  
+  .catalog-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .catalog-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .catalog-item h3 {
+    font-size: 1.2rem; 
+    font-weight: 400;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .catalog-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+
+  
+  .footer {
+    background-color: #fefefe;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 60px 5%;
+    gap: 60px;
+  }
+  
+  .footer-col {
+    flex: 1;
+    min-width: 240px;
+  }
+  
+  .footer-col h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  
+  .footer-col ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
   
-  footer ul li {
-    display: inline;
-    margin: 0 10px;
+  
+  .footer-col ul li {
+    margin-bottom: 10px;
   }
   
-  footer a {
-    color: white;
+  .footer-col ul li a {
+    color: inherit;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 0.95rem;
   }
   
-  footer a:hover {
-    color: #ccc;
+  .footer-form label {
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 6px;
   }
+  
+  .footer-input-group {
+    display: flex;
+    border-bottom: 2px solid #000;
+    padding-bottom: 6px;
+  }
+  
+  .footer-input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+  }
+  
+  .footer-input-group button {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+  
+  .footer-socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    font-size: 1.5rem;
+  }
+  
+  .footer-socials a {
+    color: black;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-socials a:hover {
+    transform: scale(1.2);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    border-top: 1px solid #ccc;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-location {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-location a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9rem;
+  }
+  
+  .footer-location a:hover {
+    text-decoration: underline;
+  }
+  

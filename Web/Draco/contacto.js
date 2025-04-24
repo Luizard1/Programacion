@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const contactBtn = document.getElementById("contactButton"); // Asegúrate de ponerle este ID al botón en tu header
+    const contactBtn = document.getElementById("contactButton");
     const overlay = document.getElementById("contactOverlay");
     const closeBtn = document.getElementById("closeContact");
   
