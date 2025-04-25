@@ -739,3 +739,92 @@
     text-decoration: underline;
   }
   
+
+
+/* === ANIMACIONES === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* === SCROLL SUAVE === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === RESPONSIVIDAD === */
+@media (max-width: 768px) {
+  .promo-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+  .promo-image, .promo-text {
+    flex: none;
+    width: 100%;
+  }
+
+  .catalog-item {
+    width: 100%;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .dropdown-menu {
+    width: 100vw;
+  }
+
+  .contact-panel {
+    width: 100vw;
+  }
+
+  .video-container {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .overlay h1 {
+    font-size: 10vw;
+  }
+
+  .overlay h3 {
+    font-size: 1.4rem;
+    margin-left: 20px;
+  }
+
+  .overlay button {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
