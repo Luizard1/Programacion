@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base DRACO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <ul>
+                <button id="menuButton" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round"/>
+                        <line x1="4" y1="10" x2="20" y2="10" stroke-linecap="round"/>
+                        <line x1="4" y1="14" x2="20" y2="14" stroke-linecap="round"/>
+                        <line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round"/>
+                    </svg>
+                    Menú
+                </button>
+
+                <div class="dropdown-overlay" id="dropdownOverlay">
+                  <div class="dropdown-menu slide-in" id="dropdownMenu">
+                    <button id="closeMenu" class="close-menu-btn">✕</button>
+                    <a href="#">Inicio</a>
+                    <a href="#">Catálogo</a>
+                    <a href="#">Hombre</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">+52 800 000 0000</a>
+                  </div>
+                </div>
+
+                <li id="searchWrapper">
+                  <button id="searchTrigger" class="search-trigger">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                      <circle cx="10" cy="10" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+                      <line x1="14.5" y1="14.5" x2="20" y2="20" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Buscar
+                  </button>
+
+                  <form id="searchForm" class="search-form" action="busqueda.html" method="get">
+                    <span class="search-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <circle cx="10" cy="10" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="14.5" y1="14.5" x2="20" y2="20" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <input type="text" name="q" placeholder="Buscar en el sitio..." required />
+                    <button type="button" id="searchClose" class="close-search">✕</button>
+                  </form>
+                </li>
+            </ul>
+        </div>
+
+        <div class="header-center">
+            <a href='index.html'>
+                <img src="Media/Logo/logo_draco.png" alt="" width="30%" style="filter: invert(100%)">
+            </a>
+        </div>
+
+        <div>
+            <ul>
+                <button id="contactButton">Contactar</button>
+                <div class="contact-overlay" id="contactOverlay">
+                  <div class="contact-panel">
+                    <button class="close-contact" id="closeContact">✕</button>
+                    <h2>COMUNÍQUESE CON NOSOTROS</h2>
+
+                    <p>
+                      <a href="tel:+528004610560">📞 LLÁMENOS +52 800 461 0560</a><br>
+                      <small>De lunes a sábado de 8:00 a 22:00 (hora del este).<br>
+                      Domingo de 9:00 a 20:00 (hora del este).</small>
+                    </p>
+
+                    <p>
+                      <span style="color: gold;">●</span>
+                      <a href="#">CHAT EN VIVO</a><br>
+                      <small>De lunes a sábado de 9:00 a 23:00 (hora del este).<br>
+                      Domingo de 10:00 a 21:00 (hora del este).</small>
+                    </p>
+
+                    <p>¿Necesita más ayuda?<br>
+                    <a href="#">Póngase en contacto con nuestro equipo</a></p>
+                  </div>
+                </div>
+
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <path d="M6 8L4 20H20L18 8H6Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </ul>
+        </div>
+    </header>
+
+
+<main>
+  <section class="about-section" >
+  <div class="container">
+    <h1 id="ConoceDraco">Conoce DRACO</h1>
+
+    <article class="about-block" id="FundacionDraco">
+        <div class="text-content">
+          <h2>Fundación DRACO</h2>
+          <p>
+            DRACO nació en el año 2015 con una visión clara: redefinir el calzado masculino mediante la combinación de artesanía, diseño vanguardista y elegancia atemporal. Fundada en Ciudad de México, DRACO se posicionó rápidamente como símbolo de distinción, apostando por materiales nobles y p
+          </p>
+        </div>
+        <div class="image-content">
+          <img src="Media/FundacionDraco.webp" alt="Fundación DRACO">
+        </div>
+      </article>
+
+    <article class="about-block reverse" >
+      <div class="text-content">
+        <h2>Nuestro Grupo</h2>
+        <p>
+          DRACO forma parte del Grupo DRACO Elite, un consorcio que agrupa diversas marcas enfocadas en el estilo de vida masculino de alto nivel. Nuestro grupo abarca desde moda y accesorios hasta artículos de cuidado personal, todos bajo un mismo principio: sofisticación sin concesiones.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/NuestroGrupo.webp" alt="Nuestro Grupo" id="NuestroGrupo">
+      </div>
+    </article>
+
+    <article class="about-block" id="Colaboraciones" >
+      <div class="text-content">
+        <h2>Colaboraciones</h2>
+        <p>
+          A lo largo de nuestra historia, hemos colaborado con diseñadores internacionales, artistas y casas de moda para lanzar ediciones limitadas que celebran la excelencia y la innovación. Estas alianzas estratégicas nos permiten explorar nuevas formas de expresión sin perder nuestra esencia clásica.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/Colaboraciones.webp" alt="Colaboraciones">
+      </div>
+    </article>
+
+    <article class="about-block reverse" >
+      <div class="text-content">
+        <h2>Sostenibilidad</h2>
+        <p>
+          En DRACO creemos que la elegancia también debe ser responsable. Implementamos prácticas sostenibles en nuestras operaciones, incluyendo el uso de cuero de origen ético, procesos de producción de bajo impacto y empaques reciclables. Nuestra meta: dejar una huella en la moda, no en el planeta.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/Sostenibilidad.webp" alt="Sostenibilidad" id="Sostenibilidad">
+      </div>
+    </article>
+
+    <article class="about-block" >
+      <div class="text-content">
+        <h2>Trabaja Con Nosotros</h2>
+        <p>
+          Formar parte de DRACO es unirse a una familia apasionada por el detalle y la excelencia. Buscamos talento creativo, comprometido y con sensibilidad estética para seguir creciendo como referente en el calzado masculino. Explora nuestras oportunidades laborales y descubre un lugar donde tu elegancia puede dejar huella.
+          </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/TrabajaConNosotros.webp" alt="TrabajaConNosotros" id="TrabajaConNosotros">
+      </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-col newsletter">
+      <form class="footer-form">
+        <div class="footer-input-group">
+          <input type="email" id="email" placeholder="Inserta tu dirección de correo electrónico*" required>
+          <button type="submit">→</button>
+        </div>
+      </form>
+      <div class="footer-socials">
+        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://spotify.com" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="#ConoceDraco">Fundación DRACO</a></li>
+        <li><a href="#FundacionDraco">Nuestro Grupo</a></li>
+        <li><a href="#NuestroGrupo">Colaboraciones</a></li>
+        <li><a href="#Colaboraciones">Sostenibilidad</a></li>
+        <li><a href="#Sostenibilidad">Trabaja con nosotros</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>LEGAL TERMS AND CONDITIONS</h4>
+      <ul>
+        <li><a href="Terminos.html#AvisoLegal">Aviso Legal</a></li>
+        <li><a href="Terminos.html#PoliticaPrivacidad">Política de Privacidad</a></li>
+        <li><a href="Terminos.html#PoliticaCookies">Política de Cookies</a></li>
+        <li><a href="Terminos.html#ConfiguracionCookies">Configuración de Cookies</a></li>
+        <li><a href="Terminos.html#MapaDelSitio">Mapa del Sitio</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© DRACO 2025 – Todos los derechos reservados</p>
+    <div class="footer-location">
+      <a href="ubicar-tienda.html"><i class="fa-solid fa-location-dot"></i> ELIGE UNA TIENDA</a>
+      <span><i class="fa-solid fa-globe"></i> LOCATION: LATINOAMÉRICA</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/menu.js"></script>
+<script src="js/search.js"></script>
+<script src="js/contacto.js"></script>
+<script src="js/hero.js"></script>
+</body>
+</html>
