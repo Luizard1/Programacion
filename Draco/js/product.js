@@ -31,3 +31,14 @@ new Swiper('.mySwiper', {
     nextEl: '.swiper-button-next',
   },
 });
+
+// 5. Añadir al carrito
+const addBtn = document.getElementById("add-to-cart");
+// Asignar el id del producto al botón
+addBtn.dataset.id = id;
+addBtn.addEventListener("click", () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("✅ Producto añadido al carrito");
+});

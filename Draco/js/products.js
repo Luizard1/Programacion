@@ -1,4 +1,4 @@
-// js/products.js
+
 export const products = {
   "producto1": {
     title: "Zapato de Gala Negro",
@@ -50,9 +50,9 @@ export const products = {
   },
   "producto5": {
     title: "Oxford negro clásico",
-    price: "MXN$ 10,200",
+    price: "MXN$ 9,500",
     category: "Business",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    description: "Oxford negro de corte elegante, con puntera reforzada y suela de caucho antideslizante. Ideal para jornadas largas de oficina.",
     images: [
       "Media/producto5.jpg",
       "Media/producto5_1.jpg",
@@ -61,9 +61,9 @@ export const products = {
   },
   "producto6": {
     title: "Oxford Oxford marrón",
-    price: "MXN$ 8,200",
+    price: "MXN$ 8,750",
     category: "Casual",
-    description: "Zapato Oxford en tono marrón, elaborado con piel pulida de acabado suave. Diseño clásico y color obscuro.",
+    description: "Zapato Oxford en piel marrón envejecida, con costuras a la vista y plantilla acolchada para mayor comodidad urbana.",
     images: [
       "Media/producto6.jpg",
       "Media/producto6_1.jpg",
@@ -73,9 +73,9 @@ export const products = {
   },
   "producto7": {
     title: "Oxford negro estilizado",
-    price: "MXN$ 12,200",
+    price: "MXN$ 11,200",
     category: "Ceremonia",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    description: "Modelo estilizado en charol negro con detalle de costura fina y suela de cuero clásica. Perfecto para eventos de etiqueta.",
     images: [
       "Media/producto7.jpg",
       "Media/producto7_1.jpg",
@@ -85,9 +85,9 @@ export const products = {
   },
   "producto8": {
     title: "Wingtip de Charol Negro",
-    price: "MXN$ 12,200",
+    price: "MXN$ 12,500",
     category: "Ceremonia",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    description: "Wingtip en charol negro de alta densidad, con detalle brogue y forro interior de piel suave. Lujo y distinción en cada paso.",
     images: [
       "Media/producto8.jpg",
       "Media/producto8_1.jpg",
@@ -96,9 +96,9 @@ export const products = {
   },
   "producto9": {
     title: "Oxfor/Wingtip Brillante",
-    price: "MXN$ 12,200",
+    price: "MXN$ 10,900",
     category: "Casual",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    description: "Híbrido Oxford-Wingtip en piel brillante, suela ligera y horma ergonómica. Diseño versátil para diario y ocasional.",
     images: [
       "Media/producto9.jpg",
       "Media/producto9_1.jpg",
@@ -107,9 +107,9 @@ export const products = {
   },
   "producto10": {
     title: "Oxford Charol Negro",
-    price: "MXN$ 12,200",
+    price: "MXN$ 11,800",
     category: "Ceremonia",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    description: "Oxford clásico en charol de alto brillo, con entresuela acolchada y plantilla de apoyo. Sobriedad absoluta para gala.",
     images: [
       "Media/producto10.jpg",
       "Media/producto10_1.jpg",
@@ -118,10 +118,10 @@ export const products = {
     ]
   },
   "producto11": {
-    title: "Wingtip Café Madera",
-    price: "MXN$ 12,200",
-    category: "Wingtip",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    title:       "Wingtip Café Madera",
+    price:       "MXN$ 9,950",
+    category:    "Wingtip",
+    description: "Wingtip en tono café con matices madera, costuras destacadas y suela flexible. Aporta calidez y carácter a tu look.",
     images: [
       "Media/producto11.jpg",
       "Media/producto11_1.jpg",
@@ -129,10 +129,10 @@ export const products = {
     ]
   },
   "producto12": {
-    title: "Wingtip Vino",
-    price: "MXN$ 12,200",
-    category: "Wingtip",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    title:       "Wingtip Vino",
+    price:       "MXN$ 10,300",
+    category:    "Wingtip",
+    description: "Wingtip en gamuza color vino intenso, con ribete elegante y plantilla transpirable. Ideal para destacar en eventos sociales.",
     images: [
       "Media/producto12.jpg",
       "Media/producto12_1.jpg",
@@ -141,10 +141,10 @@ export const products = {
     ]
   },
   "producto13": {
-    title: "Wingtip Gamúza",
-    price: "MXN$ 12,200",
-    category: "Wingtip",
-    description: "Zapato Oxford en tono negro, elaborado con piel pulida de acabado suave. Diseño clásico y color Satinado.",
+    title:       "Wingtip Gamúza Azul",
+    price:       "MXN$ 10,800",
+    category:    "Wingtip",
+    description: "Wingtip en gamuza azul profundo, forro interior de piel y suela de caucho antideslizante. Comodidad premium con un toque de color.",
     images: [
       "Media/producto13.jpg",
       "Media/producto13_1.jpg",

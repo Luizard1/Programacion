@@ -1213,3 +1213,72 @@
     text-decoration: none;
     color: inherit;
   }
+
+  .cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  }
+
+  .cart-info {
+    flex: 1;
+  }
+
+  .remove-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  #checkout {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .user-overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.3);
+    display: none; z-index: 1000;
+  }
+  .user-panel {
+    position: absolute; right: 20px; top: 1px;
+    width: 300px; background: #fff;
+    padding: 20px; border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .close-user {
+    position: absolute; top: 10px; right: 10px;
+    background: none; border: none; font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .user-panel h2 { margin-top: 0; }
+  .user-panel form label {
+    display: block; margin-bottom: 12px;
+  }
+  .user-panel form input {
+    width: 100%; padding: 6px; margin-top: 4px;
+    box-sizing: border-box;
+  }
+  .user-panel form button {
+    width: 100%; padding: 8px; margin-top: 12px;
+  }
+  .user-panel p {
+    font-size: 0.9rem; margin: 8px 0;
+  }
+  .user-panel a {
+    color: #007bff; text-decoration: none;
+  }
+  .user-panel hr {
+    margin: 16px 0; border: none;
+    border-top: 1px solid #ddd;
+  }
