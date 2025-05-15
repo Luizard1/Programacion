@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wingtip</title>
+  <title>Base DRACO</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -25,11 +25,11 @@
                 <div class="dropdown-overlay" id="dropdownOverlay">
                   <div class="dropdown-menu slide-in" id="dropdownMenu">
                     <button id="closeMenu" class="close-menu-btn">✕</button>
-                    <a href="index.html">Inicio</a>
-                    <a href="categoria.html">Categoría</a>
-                    <a href="colecciones.html">Colecciones</a>
+                    <a href="#">Inicio</a>
+                    <a href="#">Catálogo</a>
+                    <a href="#">Hombre</a>
                     <a href="#">Contacto</a>
-                    <a href="tel:+524436462684">+52 4436 4626 84</a>
+                    <a href="#">+52 800 000 0000</a>
                   </div>
                 </div>
 
@@ -73,16 +73,16 @@
                     <h2>COMUNÍQUESE CON NOSOTROS</h2>
 
                     <p>
-                      <a href="tel:+524436462684">📞 LLÁMENOS +52 4436 4626 84</a><br>
-                      <small>De lunes a sábado de 8:00 a 22:00 (hora centro MX).<br>
-                      Domingo de 9:00 a 20:00 (hora centro MX).</small>
+                      <a href="tel:+528004610560">📞 LLÁMENOS +52 800 461 0560</a><br>
+                      <small>De lunes a sábado de 8:00 a 22:00 (hora del este).<br>
+                      Domingo de 9:00 a 20:00 (hora del este).</small>
                     </p>
 
                     <p>
                       <span style="color: gold;">●</span>
                       <a href="#">CHAT EN VIVO</a><br>
-                      <small>De lunes a sábado de 9:00 a 23:00 (hora centro MX).<br>
-                      Domingo de 10:00 a 21:00 (hora centro MX).</small>
+                      <small>De lunes a sábado de 9:00 a 23:00 (hora del este).<br>
+                      Domingo de 10:00 a 21:00 (hora del este).</small>
                     </p>
 
                     <p>¿Necesita más ayuda?<br>
@@ -90,83 +90,17 @@
                   </div>
                 </div>
 
-                <li id="userWrapper">
-                  <button id="userButton">
-                    <!-- Icono usuario -->
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
-                      <circle cx="12" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M4 20C4 16.6863 7.58172 14 12 14
-                              C16.4183 14 20 16.6863 20 20"
-                            stroke-linecap="round" stroke-linejoin="round"/>
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                  </button>
-
-                  <div class="user-overlay" id="userOverlay">
-                    <div class="user-panel">
-                      <button class="close-user" id="closeUser">✕</button>
-
-                      <!-- LOGIN -->
-                      <div id="loginSection">
-                        <h2>Iniciar sesión</h2>
-                        <form id="loginForm">
-                          <label>Usuario<br><input type="text" name="username" required></label>
-                          <label>Contraseña<br><input type="password" name="password" required></label>
-                          <button type="submit">Entrar</button>
-                        </form>
-                        <p><a href="#" id="forgotLink">¿Olvidó su contraseña?</a></p>
-                        <hr>
-                        <p>¿No tienes cuenta? <a href="#" id="registerLink">Regístrate</a></p>
-                      </div>
-
-                      <!-- REGISTER -->
-                      <div id="registerSection" style="display:none;">
-                        <h2>Regístrate</h2>
-                        <form id="registerForm">
-                          <label>Correo electrónico*<br>
-                            <input type="email" name="email" required>
-                          </label>
-                          <label>Usuario*<br>
-                            <input type="text" name="username" required>
-                          </label>
-                          <label>Apellidos (opcional)<br>
-                            <input type="text" name="lastName">
-                          </label>
-                          <label>Contraseña*<br>
-                            <input type="password" name="password" required>
-                          </label>
-                          <label>Confirmar contraseña*<br>
-                            <input type="password" name="confirmPassword" required>
-                          </label>
-                          <label>Número de teléfono (opcional)<br>
-                            <input type="tel" name="phone">
-                          </label>
-                          <label>Talla de zapato MX*<br>
-                            <input type="text" name="shoeSize" required>
-                          </label>
-                          <button type="submit">Crear cuenta</button>
-                        </form>
-                        <p>¿Ya tienes cuenta? <a href="#" id="backToLogin">Iniciar sesión</a></p>
-                      </div>
-
-                      <!-- FORGOT -->
-                      <div id="forgotSection" style="display:none;">
-                        <h2>Recuperar contraseña</h2>
-                        <form id="forgotForm">
-                          <label>Usuario<br><input type="text" name="username" required></label>
-                          <button type="submit">Enviar enlace</button>
-                        </form>
-                        <p>¿Recordaste? <a href="#" id="backToLogin2">Iniciar sesión</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <button id="cartButton" type="button" onclick="window.location.href='cart.html';">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
-                    <path d="M6 8L4 20H20L18 8H6Z" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                </button>
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="1.5">
+                        <path d="M6 8L4 20H20L18 8H6Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </button>
             </ul>
         </div>
@@ -174,14 +108,70 @@
 
 
 <main>
-  <section class="categoria-header">
-    <h1>Wingtip</h1>
-    <p>Zapatos para quienes entienden que el poder se viste.</p>
-  </section>
+  <section class="about-section" >
+  <div class="container">
+    <h1 id="ConoceDraco">Conoce DRACO</h1>
 
-  <section class="productos-grid" id="productos-grid">
+    <article class="about-block" id="FundacionDraco">
+        <div class="text-content">
+          <h2>Fundación DRACO</h2>
+          <p>
+            DRACO nació en el año 2015 con una visión clara: redefinir el calzado masculino mediante la combinación de artesanía, diseño vanguardista y elegancia atemporal. Fundada en Ciudad de México, DRACO se posicionó rápidamente como símbolo de distinción, apostando por materiales nobles y p
+          </p>
+        </div>
+        <div class="image-content">
+          <img src="Media/FundacionDraco.webp" alt="Fundación DRACO">
+        </div>
+      </article>
 
-  </section>
+    <article class="about-block reverse" >
+      <div class="text-content">
+        <h2>Nuestro Grupo</h2>
+        <p>
+          DRACO forma parte del Grupo DRACO Elite, un consorcio que agrupa diversas marcas enfocadas en el estilo de vida masculino de alto nivel. Nuestro grupo abarca desde moda y accesorios hasta artículos de cuidado personal, todos bajo un mismo principio: sofisticación sin concesiones.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/NuestroGrupo.webp" alt="Nuestro Grupo" id="NuestroGrupo">
+      </div>
+    </article>
+
+    <article class="about-block" id="Colaboraciones" >
+      <div class="text-content">
+        <h2>Colaboraciones</h2>
+        <p>
+          A lo largo de nuestra historia, hemos colaborado con diseñadores internacionales, artistas y casas de moda para lanzar ediciones limitadas que celebran la excelencia y la innovación. Estas alianzas estratégicas nos permiten explorar nuevas formas de expresión sin perder nuestra esencia clásica.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/Colaboraciones.webp" alt="Colaboraciones">
+      </div>
+    </article>
+
+    <article class="about-block reverse" >
+      <div class="text-content">
+        <h2>Sostenibilidad</h2>
+        <p>
+          En DRACO creemos que la elegancia también debe ser responsable. Implementamos prácticas sostenibles en nuestras operaciones, incluyendo el uso de cuero de origen ético, procesos de producción de bajo impacto y empaques reciclables. Nuestra meta: dejar una huella en la moda, no en el planeta.
+        </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/Sostenibilidad.webp" alt="Sostenibilidad" id="Sostenibilidad">
+      </div>
+    </article>
+
+    <article class="about-block" >
+      <div class="text-content">
+        <h2>Trabaja Con Nosotros</h2>
+        <p>
+          Formar parte de DRACO es unirse a una familia apasionada por el detalle y la excelencia. Buscamos talento creativo, comprometido y con sensibilidad estética para seguir creciendo como referente en el calzado masculino. Explora nuestras oportunidades laborales y descubre un lugar donde tu elegancia puede dejar huella.
+          </p>
+      </div>
+      <div class="image-content">
+        <img src="Media/TrabajaConNosotros.webp" alt="TrabajaConNosotros" id="TrabajaConNosotros">
+      </div>
+</section>
+
 </main>
 
 
@@ -206,18 +196,18 @@
     </div>
 
     <div class="footer-col">
-      <h4>COMPAÑIA</h4>
+      <h4>COMPANY</h4>
       <ul>
-        <li><a href="About.html#FundacionDraco">Fundación DRACO</a></li>
-        <li><a href="About.html#NuestroGrupo">Nuestro Grupo</a></li>
-        <li><a href="About.html#Colaboraciones">Colaboraciones</a></li>
-        <li><a href="About.html#Sostenibilidad">Sostenibilidad</a></li>
-        <li><a href="About.html#TrabajaConNosotros">Trabaja con nosotros</a></li>
+        <li><a href="#ConoceDraco">Fundación DRACO</a></li>
+        <li><a href="#FundacionDraco">Nuestro Grupo</a></li>
+        <li><a href="#NuestroGrupo">Colaboraciones</a></li>
+        <li><a href="#Colaboraciones">Sostenibilidad</a></li>
+        <li><a href="#Sostenibilidad">Trabaja con nosotros</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>TERMINOS LEGALES Y CONDICIONES</h4>
+      <h4>LEGAL TERMS AND CONDITIONS</h4>
       <ul>
         <li><a href="Terminos.html#AvisoLegal">Aviso Legal</a></li>
         <li><a href="Terminos.html#PoliticaPrivacidad">Política de Privacidad</a></li>
@@ -242,7 +232,5 @@
 <script src="js/search.js"></script>
 <script src="js/contacto.js"></script>
 <script src="js/hero.js"></script>
-<script src="js/user.js"></script>
-<script type="module" src="js/category.js"></script>
 </body>
 </html>
