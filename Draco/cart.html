@@ -9,9 +9,7 @@
 </head>
 <body>
 
-  <div id="heroLogo" class="hero-logo">
-    <img src="Media/Logo/logo_draco.png" alt="DRACO">
-  </div>
+
 
     <header>
         <div>
@@ -33,7 +31,7 @@
                     <a href="categoria.html">Categoría</a>
                     <a href="colecciones.html">Colecciones</a>
                     <a href="#">Contacto</a>
-                    <a href="tel:+524436462684">+52 4436 4626 84</a>
+                    
                   </div>
                 </div>
 
@@ -183,55 +181,64 @@
         </div>
     </header>
 
-    <main style="margin-top: 20vh;">
-        <h1>Carrito de Compras</h1>
-        <div id="cart-items"></div>
-        <p>Total: <span id="cart-total">MXN$ 0.00</span></p>
-        <button id="checkout">Proceder a Pagar</button>
-
-        <!-- Selección de método de pago -->
-        <div id="payment-method" style="display:none; margin-top:20px;">
+    <main class="cart-container">
+      <h1>Carrito de Compras</h1>
+  
+      <!-- 1. Productos en el carrito -->
+      <section id="cart-items" class="cart-items">
+        <!-- Aquí JS inyectará .cart-item -->
+      </section>
+  
+      <!-- 2. Total -->
+      <div class="cart-summary">
+        <span>Total:</span>
+        <strong id="cart-total">MXN$ 0.00</strong>
+      </div>
+  
+      <!-- 3. Botón para proceder -->
+      <button id="checkout" class="btn-primary">Proceder a Pagar</button>
+  
+      <!-- 4. Método de pago -->
+      <section id="payment-method" class="payment-section hidden">
         <h2>Elige método de pago</h2>
-        <label>
-            <input type="radio" name="paymentMethod" id="method-code" value="codigo">
-            Pagar con código
-        </label>
-        <label style="margin-left:20px;">
-            <input type="radio" name="paymentMethod" id="method-card" value="tarjeta">
-            Pagar con tarjeta
-        </label>
-        </div>
+        <label><input type="radio" name="paymentMethod" id="method-code"> Pagar con código</label>
+        <label><input type="radio" name="paymentMethod" id="method-card"> Pagar con tarjeta</label>
+      </section>
 
-        <!-- Pago con código -->
-        <div id="payment-code" style="display:none; margin-top:20px;">
-        <p>Tu código de pago es: <strong id="generated-code"></strong></p>
-        <button id="confirm-code">Confirmar Pago</button>
-        </div>
+      <!-- 5. Pago con código -->
+      <section id="payment-code" class="payment-section hidden">
+        <p>Tu código de pago es: <code id="generated-code"></code></p>
+        <button id="confirm-code" class="btn-primary">Confirmar Pago</button>
+      </section>
 
-        <!-- Pago con tarjeta -->
-        <div id="payment-card" style="display:none; margin-top:20px;">
-        <form id="card-form">
-            <div>
-            <label>Nombre en Tarjeta<br>
-                <input type="text" name="cardName" required>
+      <!-- 6. Pago con tarjeta -->
+      <section id="payment-card" class="payment-section hidden">
+        <form id="card-form" class="card-form">
+          <div class="form-group">
+            <label>Nombre en tarjeta
+              <input type="text" name="cardName" required>
             </label>
+          </div>
+          <div class="form-group">
+            <label>Número de tarjeta
+              <input type="text" name="cardNumber" placeholder="#### #### #### ####" maxlength="19" required>
+            </label>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiración (MM/AA)
+                <input type="text" name="cardExpiry" placeholder="MM/AA" maxlength="5" required>
+              </label>
             </div>
-            <div>
-            <label>Número de Tarjeta<br>
-                <input type="text" name="cardNumber" required>
-            </label>
+            <div class="form-group">
+              <label>CVV
+                <input type="text" name="cardCVV" maxlength="3" required>
+              </label>
             </div>
-            <div style="display:flex; gap:10px;">
-            <label>Expiración (MM/AA)<br>
-                <input type="text" name="cardExpiry" placeholder="MM/AA" required>
-            </label>
-            <label>CVV<br>
-                <input type="text" name="cardCVV" required>
-            </label>
-            </div>
-            <button type="submit">Realizar Pago</button>
+          </div>
+          <button type="submit" class="btn-primary">Realizar Pago</button>
         </form>
-        </div>
+      </section>
     </main>
 
     <script src="js/menu.js"></script>
@@ -245,7 +252,30 @@
     <script type="module" src="js/auth.js"></script>
     <script type="module" src="js/loginUsuario.js"></script>
     <script type="module" src="js/registrarUsuario.js"></script>
-    <script type="module" src="js/verificarSesion.js"></script>
+        <script type="module" src="js/verificarSesion.js"></script>
+
+    <script>
+      window.addEventListener('mouseover', initLandbot, { once: true });
+      window.addEventListener('touchstart', initLandbot, { once: true });
+      var myLandbot;
+      function initLandbot() {
+        if (!myLandbot) {
+          var s = document.createElement('script');
+          s.type = "module"
+          s.async = true;
+          s.addEventListener('load', function() {
+            var myLandbot = new Landbot.Livechat({
+              configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2956506-BW6IYEFE5HSUOY9J/index.json',
+            });
+          });
+          s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+          var x = document.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      }
+      </script>
+
+
 
 </body>
 

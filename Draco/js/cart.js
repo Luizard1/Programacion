@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const confirmCode   = document.getElementById("confirm-code");
   const cardForm      = document.getElementById("card-form");
 
+  // helper para ocultar/mostrar
+  const show = el => el.classList.remove("hidden");
+  const hide = el => el.classList.add("hidden");
+
   // 1. Cargar carrito
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -28,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const div = document.createElement("div");
     div.className = "cart-item";
     div.innerHTML = `
-      <img src="${p.images[0]}" alt="${p.title}" width="80" />
+      <img src="${p.images[0]}" alt="${p.title}" class="cart-thumb">
       <div class="cart-info">
-        <h2>${p.title}</h2>
+        <h3>${p.title}</h3>
         <p>${p.price}</p>
       </div>
       <button class="remove-btn" data-idx="${idx}">Eliminar</button>
@@ -48,42 +52,41 @@ document.addEventListener("DOMContentLoaded", () => {
     location.reload();
   });
 
-  // 4. Al hacer clic en “Proceder a Pagar”
+  // al hacer clic en Proceder a Pagar
   checkoutBtn.addEventListener("click", () => {
     if (cart.length === 0) {
-      alert("Tu carrito está vacío.");
-      return;
+      return alert("Tu carrito está vacío.");
     }
-    // Mostrar opciones de pago
-    paySection.style.display  = "block";
-    checkoutBtn.disabled      = true;
+    show(paySection);     // muestra radios
+    hide(codeSection);    // oculta código
+    hide(cardSection);    // oculta tarjeta
+    checkoutBtn.disabled = true;
   });
 
-  // 5. Cuando eligen “Pagar con código”
+  // 5. Pagar con código
   methodCode.addEventListener("change", () => {
     if (!methodCode.checked) return;
-    // Generar código aleatorio
     const code = "COD-" + Math.random().toString(36).substr(2, 8).toUpperCase();
     generatedCode.textContent = code;
-    codeSection.style.display = "block";
-    cardSection.style.display = "none";
+    show(codeSection);
+    hide(cardSection);
   });
 
-  // 6. Cuando eligen “Pagar con tarjeta”
+  // 6. Pagar con tarjeta
   methodCard.addEventListener("change", () => {
     if (!methodCard.checked) return;
-    cardSection.style.display = "block";
-    codeSection.style.display = "none";
+    show(cardSection);
+    hide(codeSection);
   });
 
-  // 7. Confirmar pago por código
+  // 7. Confirmar código
   confirmCode.addEventListener("click", () => {
     alert(`✅ Pago con código procesado por MXN$ ${total.toFixed(2)}. ¡Gracias!`);
     localStorage.removeItem("cart");
     location.reload();
   });
 
-  // 8. Procesar pago con tarjeta (simulado)
+  // 8. Procesar tarjeta
   cardForm.addEventListener("submit", e => {
     e.preventDefault();
     alert(`✅ Pago con tarjeta procesado por MXN$ ${total.toFixed(2)}. ¡Gracias!`);

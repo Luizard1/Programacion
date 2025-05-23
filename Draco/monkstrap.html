@@ -29,7 +29,7 @@
                     <a href="categoria.html">Categoría</a>
                     <a href="colecciones.html">Colecciones</a>
                     <a href="#">Contacto</a>
-                    <a href="tel:+524436462684">+52 4436 4626 84</a>
+                    
                   </div>
                 </div>
 
@@ -256,6 +256,29 @@
 <script type="module" src="js/auth.js"></script>
 <script type="module" src="js/loginUsuario.js"></script>
 <script type="module" src="js/registrarUsuario.js"></script>
-<script type="module" src="js/verificarSesion.js"></script>
+    <script type="module" src="js/verificarSesion.js"></script>
+
+    <script>
+      window.addEventListener('mouseover', initLandbot, { once: true });
+      window.addEventListener('touchstart', initLandbot, { once: true });
+      var myLandbot;
+      function initLandbot() {
+        if (!myLandbot) {
+          var s = document.createElement('script');
+          s.type = "module"
+          s.async = true;
+          s.addEventListener('load', function() {
+            var myLandbot = new Landbot.Livechat({
+              configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2956506-BW6IYEFE5HSUOY9J/index.json',
+            });
+          });
+          s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+          var x = document.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      }
+      </script>
+
+
 </body>
 </html>

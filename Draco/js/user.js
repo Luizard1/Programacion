@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginSection.style.display    = "block";
   });
 
-  // Simular base de datos con localStorage
+  /* Simular base de datos con localStorage
   const getUsers = () => JSON.parse(localStorage.getItem("users")) || {};
   const setUsers = u => localStorage.setItem("users", JSON.stringify(u));
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* 2) REGISTER
+     2) REGISTER
     registerForm.addEventListener("submit", e => {
         e.preventDefault();
         const form = new FormData(registerForm);
