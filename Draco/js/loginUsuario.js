@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Credenciales inválidas');
     } else {
       verificarSesion();
+      // Redireccionar o recargar
+      window.location.reload();
     }
   });
 
@@ -57,5 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     await supabase.auth.signOut();
     userInfoSection.style.display = 'none';
     loginSection.style.display = 'block';
+
+    // Vaciar carrito
+    localStorage.removeItem("cart");
+
+    // Redireccionar o recargar
+    window.location.reload();
+
   });
 });

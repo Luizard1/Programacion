@@ -31,7 +31,7 @@
                     <a href="categoria.html">Categoría</a>
                     <a href="colecciones.html">Colecciones</a>
                     <a href="#">Contacto</a>
-                    
+
                   </div>
                 </div>
 
@@ -183,21 +183,21 @@
 
     <main class="cart-container">
       <h1>Carrito de Compras</h1>
-  
+
       <!-- 1. Productos en el carrito -->
       <section id="cart-items" class="cart-items">
         <!-- Aquí JS inyectará .cart-item -->
       </section>
-  
+
       <!-- 2. Total -->
       <div class="cart-summary">
         <span>Total:</span>
         <strong id="cart-total">MXN$ 0.00</strong>
       </div>
-  
+
       <!-- 3. Botón para proceder -->
       <button id="checkout" class="btn-primary">Proceder a Pagar</button>
-  
+
       <!-- 4. Método de pago -->
       <section id="payment-method" class="payment-section hidden">
         <h2>Elige método de pago</h2>
@@ -252,7 +252,11 @@
     <script type="module" src="js/auth.js"></script>
     <script type="module" src="js/loginUsuario.js"></script>
     <script type="module" src="js/registrarUsuario.js"></script>
-        <script type="module" src="js/verificarSesion.js"></script>
+    <script type="module" src="js/verificarSesion.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="js/enviarCorreo.js"></script>
+
 
     <script>
       window.addEventListener('mouseover', initLandbot, { once: true });
@@ -325,7 +329,7 @@
   <div class="footer-bottom">
     <p>© DRACO 2025 – Todos los derechos reservados</p>
     <div class="footer-location">
-      <a href="ubicar-tienda.html"><i class="fa-solid fa-location-dot"></i> ELIGE UNA TIENDA</a>
+      <a href="https://www.google.com/maps/d/edit?mid=1ng7s8Vt-bCeyRdHtiBTsKSIHXwYOQXM&usp=sharing" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i>MOSTRAR SUCURSALES</a>
       <span><i class="fa-solid fa-globe"></i> LOCATION: LATINOAMÉRICA</span>
     </div>
   </div>
