@@ -106,6 +106,14 @@
                     <div class="user-panel">
                       <button class="close-user" id="closeUser">✕</button>
 
+
+                      <!-- USER INFO (visible tras login) -->
+                        <div id="userInfoSection" style="display: none;">
+                          <h2>Bienvenido, <span id="userNameDisplay"></span></h2>
+                          <button id="logoutButton">Cerrar sesión</button>
+                        </div>
+
+
                       <!-- LOGIN -->
                       <div id="loginSection">
                         <h2>Iniciar sesión</h2>
@@ -244,5 +252,11 @@
 <script src="js/hero.js"></script>
 <script src="js/user.js"></script>
 <script type="module" src="js/category.js"></script>
+
+<script type="module" src="js/supabaseClient.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/loginUsuario.js"></script>
+<script type="module" src="js/registrarUsuario.js"></script>
+<script type="module" src="js/verificarSesion.js"></script>
 </body>
 </html>

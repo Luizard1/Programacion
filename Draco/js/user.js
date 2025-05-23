@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 2) REGISTER
+  /* 2) REGISTER
     registerForm.addEventListener("submit", e => {
         e.preventDefault();
         const form = new FormData(registerForm);
@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loginSection.style.display    = "block";
         registerForm.reset();
     });
+*/
 
   // 3) FORGOT PASSWORD
   forgotForm.addEventListener("submit", e => {

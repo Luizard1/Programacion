@@ -110,11 +110,18 @@
                     <div class="user-panel">
                       <button class="close-user" id="closeUser">✕</button>
 
+                      <!-- USER INFO (visible tras login) -->
+                        <div id="userInfoSection" style="display: none;">
+                          <h2>Bienvenido, <span id="userNameDisplay"></span></h2>
+                          <button id="logoutButton">Cerrar sesión</button>
+                        </div>
+
+
                       <!-- LOGIN -->
                       <div id="loginSection">
                         <h2>Iniciar sesión</h2>
                         <form id="loginForm">
-                          <label>Usuario<br><input type="text" name="username" required></label>
+                          <label>E-mail<br><input type="email" name="username" required></label>
                           <label>Contraseña<br><input type="password" name="password" required></label>
                           <button type="submit">Entrar</button>
                         </form>
@@ -146,7 +153,7 @@
                             <input type="tel" name="phone">
                           </label>
                           <label>Talla de zapato MX*<br>
-                            <input type="text" name="shoeSize" required>
+                            <input type="number" name="shoeSize" required>
                           </label>
                           <button type="submit">Crear cuenta</button>
                         </form>
@@ -240,6 +247,13 @@
     <script src="js/contacto.js"></script>
     <script src="js/hero.js"></script>
     <script src="js/user.js"></script>
+
+    <script type="module" src="js/supabaseClient.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/loginUsuario.js"></script>
+    <script type="module" src="js/registrarUsuario.js"></script>
+    <script type="module" src="js/verificarSesion.js"></script>
+
 
 </body>
 
